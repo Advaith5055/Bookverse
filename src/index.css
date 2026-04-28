@@ -1,0 +1,1055 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BookVerse — Literary Cosmos Design System */
+
+@layer base {
+  :root {
+    /* Refined Warm Literary Theme with Deep Richness */
+    --background: 20 14% 4%;       /* Deep charcoal #0D0B0A */
+    --foreground: 36 33% 96%;      /* Warm white #F7F3EE */
+
+    --card: 20 10% 8%;             /* Dark card #151210 */
+    --card-foreground: 36 33% 96%;
+
+    --popover: 20 10% 10%;
+    --popover-foreground: 36 33% 96%;
+
+    --primary: 32 95% 62%;         /* Warm amber #F0A030 */
+    --primary-foreground: 20 14% 4%;
+    --primary-glow: 32 95% 72%;
+
+    --secondary: 24 20% 16%;
+    --secondary-foreground: 36 33% 96%;
+
+    --muted: 20 10% 15%;
+    --muted-foreground: 20 10% 55%;
+
+    --accent: 32 60% 20%;
+    --accent-foreground: 36 33% 96%;
+    --accent-glow: 32 80% 50%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 36 33% 96%;
+
+    --border: 20 10% 14%;
+    --input: 20 10% 14%;
+    --ring: 32 95% 62%;
+
+    --radius: 0.75rem;
+
+    /* Premium tokens */
+    --golden: 43 96% 58%;
+    --amber: 32 95% 62%;
+    --copper: 20 60% 45%;
+    --ivory: 36 33% 96%;
+    --obsidian: 20 14% 4%;
+    --ember: 15 80% 50%;
+    --sage: 150 20% 40%;
+
+    /* Cosmic tokens */
+    --nebula-blue: 220 80% 60%;
+    --nebula-purple: 270 70% 55%;
+    --nebula-teal: 180 60% 50%;
+    --starlight: 45 100% 90%;
+
+    /* Luxe Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(20 14% 4%) 0%, hsl(20 20% 8%) 30%, hsl(32 30% 10%) 70%, hsl(20 14% 6%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(20 14% 6%) 0%, hsl(20 14% 4%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(32 95% 55%) 0%, hsl(25 90% 50%) 50%, hsl(43 96% 58%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(20 10% 10%) 0%, hsl(20 10% 7%) 100%);
+    --gradient-shimmer: linear-gradient(90deg, transparent, hsl(32 95% 62% / 0.15), transparent);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(20 14% 4% / 0.9) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(32 95% 62% / 0.15), transparent 70%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(32 95% 62% / 0.08) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(43 96% 58% / 0.06) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(20 60% 45% / 0.05) 0px, transparent 50%);
+    --gradient-cosmos: radial-gradient(ellipse at 20% 50%, hsl(270 70% 55% / 0.06) 0px, transparent 50%), radial-gradient(ellipse at 80% 20%, hsl(220 80% 60% / 0.04) 0px, transparent 50%), radial-gradient(ellipse at 50% 80%, hsl(32 95% 62% / 0.05) 0px, transparent 50%);
+
+    /* Premium Shadows */
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 4px 16px hsl(0 0% 0% / 0.4);
+    --shadow-large: 0 8px 32px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 30px hsl(32 95% 62% / 0.25);
+    --shadow-glow-strong: 0 0 60px hsl(32 95% 62% / 0.3), 0 0 120px hsl(32 95% 62% / 0.1);
+    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.6);
+    --shadow-inner: inset 0 2px 4px hsl(0 0% 0% / 0.2);
+    --shadow-amber: 0 4px 20px hsl(32 95% 62% / 0.2);
+    --shadow-cosmic: 0 0 40px hsl(270 70% 55% / 0.15), 0 0 80px hsl(220 80% 60% / 0.08);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .dark {
+    /* Same dark theme since we default to dark */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(20 14% 4%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(32 95% 62% / 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(32 95% 62% / 0.5);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: hsl(32 95% 62% / 0.3);
+    color: hsl(36 33% 96%);
+  }
+}
+
+@layer components {
+  /* ======================== */
+  /* NAVIGATION               */
+  /* ======================== */
+  .glassy-nav {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background-color: hsl(20 14% 4% / 0.75);
+    box-shadow: 0 1px 0 hsl(32 95% 62% / 0.08), var(--shadow-soft);
+  }
+
+  /* ======================== */
+  /* GLASS EFFECTS             */
+  /* ======================== */
+  .glassy-card {
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    background-color: hsl(20 10% 8% / 0.6);
+    border: 1px solid hsl(32 95% 62% / 0.1);
+  }
+
+  .glass-panel {
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    background: linear-gradient(135deg, hsl(20 10% 10% / 0.8), hsl(20 10% 8% / 0.6));
+    border: 1px solid hsl(32 95% 62% / 0.1);
+    box-shadow: inset 0 1px 0 hsl(36 33% 96% / 0.05), var(--shadow-medium);
+  }
+
+  /* ======================== */
+  /* HOVER EFFECTS             */
+  /* ======================== */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .hover-glow {
+    transition: var(--transition-smooth);
+    position: relative;
+  }
+
+  .hover-glow::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: var(--gradient-accent);
+    opacity: 0;
+    z-index: -1;
+    filter: blur(12px);
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-glow:hover::after {
+    opacity: 0.4;
+  }
+
+  /* ======================== */
+  /* BUTTONS                   */
+  /* ======================== */
+  .btn-gradient {
+    background: var(--gradient-accent);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    color: hsl(20 14% 4%);
+    font-weight: 600;
+  }
+
+  .btn-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, hsl(36 33% 96% / 0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .btn-gradient:hover::before {
+    transform: translateX(100%);
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow-strong);
+    filter: brightness(1.1);
+  }
+
+  .btn-outline-glow {
+    background: transparent;
+    border: 1px solid hsl(32 95% 62% / 0.3);
+    color: hsl(32 95% 62%);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-outline-glow:hover {
+    border-color: hsl(32 95% 62% / 0.6);
+    background: hsl(32 95% 62% / 0.1);
+    box-shadow: var(--shadow-amber);
+  }
+
+  /* ======================== */
+  /* CARDS                     */
+  /* ======================== */
+  .card-premium {
+    background: var(--gradient-card);
+    border: 1px solid hsl(32 95% 62% / 0.08);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(32 95% 62% / 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card-premium:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px);
+    border-color: hsl(32 95% 62% / 0.15);
+  }
+
+  .card-premium:hover::before {
+    opacity: 1;
+  }
+
+  .card-3d {
+    perspective: 800px;
+    transition: var(--transition-smooth);
+  }
+
+  .card-3d:hover {
+    transform: perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-8px);
+    box-shadow: 8px 16px 40px hsl(0 0% 0% / 0.5), 0 0 30px hsl(32 95% 62% / 0.1);
+  }
+
+  /* ======================== */
+  /* TEXT EFFECTS               */
+  /* ======================== */
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-animated {
+    background: linear-gradient(135deg, hsl(32 95% 62%), hsl(43 96% 58%), hsl(25 90% 55%), hsl(32 95% 62%));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 4s ease-in-out infinite;
+  }
+
+  .text-gradient-cosmic {
+    background: linear-gradient(135deg, hsl(32 95% 62%), hsl(270 70% 65%), hsl(220 80% 65%), hsl(32 95% 62%));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 6s ease-in-out infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* ======================== */
+  /* SHIMMER                   */
+  /* ======================== */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shimmer);
+    animation: shimmer 2.5s infinite;
+  }
+
+  @keyframes shimmer {
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* ======================== */
+  /* PARTICLES BACKGROUND      */
+  /* ======================== */
+  .particles-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: hsl(32 95% 62% / 0.2);
+    border-radius: 50%;
+    animation: float-particle var(--duration, 8s) var(--delay, 0s) ease-in-out infinite;
+  }
+
+  @keyframes float-particle {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    50% {
+      transform: translate(var(--tx, 50px), var(--ty, -100px)) scale(1.5);
+    }
+  }
+
+  /* ======================== */
+  /* HERO VIGNETTE             */
+  /* ======================== */
+  .hero-vignette {
+    position: relative;
+  }
+
+  .hero-vignette::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, transparent 30%, hsl(20 14% 4%) 75%);
+    pointer-events: none;
+  }
+
+  /* ======================== */
+  /* GLOW ORB                  */
+  /* ======================== */
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: orb-drift 10s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  @keyframes orb-drift {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -20px) scale(1.15); }
+    100% { transform: translate(-20px, 10px) scale(0.95); }
+  }
+
+  /* ======================== */
+  /* ANIMATED BORDER           */
+  /* ======================== */
+  .border-gradient {
+    position: relative;
+    border: none !important;
+  }
+
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(32 95% 62% / 0.3), hsl(43 96% 58% / 0.1), hsl(32 95% 62% / 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* ======================== */
+  /* COUNTING ANIMATION        */
+  /* ======================== */
+  .count-up {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ======================== */
+  /* RIPPLE EFFECT             */
+  /* ======================== */
+  .ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: hsl(32 95% 62% / 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+  }
+
+  @keyframes ripple-animation {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  /* ======================== */
+  /* CARD FLIP                 */
+  /* ======================== */
+  .card-flip {
+    perspective: 1000px;
+  }
+
+  .card-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .card-flip:hover .card-flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-flip-front,
+  .card-flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .card-flip-back {
+    transform: rotateY(180deg);
+  }
+
+  /* ======================== */
+  /* SKELETON PULSE            */
+  /* ======================== */
+  .skeleton-pulse {
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes skeleton-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ======================== */
+  /* STAGGER CHILDREN          */
+  /* ======================== */
+  .stagger-children > * {
+    opacity: 0;
+    animation: stagger-in 0.5s ease-out forwards;
+  }
+
+  .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+  @keyframes stagger-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ======================== */
+  /* MARQUEE                   */
+  /* ======================== */
+  .marquee-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .marquee-container::before,
+  .marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, hsl(20 14% 4%), transparent);
+  }
+
+  .marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, hsl(20 14% 4%), transparent);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 2rem;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ======================== */
+  /* PULSE RING                */
+  /* ======================== */
+  .pulse-ring {
+    position: relative;
+  }
+
+  .pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid hsl(32 95% 62% / 0.3);
+    animation: pulse-ring-anim 2s ease-out infinite;
+  }
+
+  @keyframes pulse-ring-anim {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  /* ======================== */
+  /* DECORATIVE LINE           */
+  /* ======================== */
+  .deco-line {
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-accent);
+    border-radius: 2px;
+  }
+
+  /* ======================== */
+  /* NOISE TEXTURE OVERLAY     */
+  /* ======================== */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 128px 128px;
+  }
+
+  /* ════════════════════════════════════════════════════ */
+  /*   LITERARY COSMOS — UNIQUE CONCEPT STYLES           */
+  /* ════════════════════════════════════════════════════ */
+
+  /* ======================== */
+  /* STARFIELD CANVAS          */
+  /* ======================== */
+  .starfield-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ======================== */
+  /* AURORA / NEBULA EFFECT    */
+  /* ======================== */
+  .aurora-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .aurora-band {
+    position: absolute;
+    width: 200%;
+    height: 40%;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0;
+    animation: aurora-wave 12s ease-in-out infinite;
+  }
+
+  .aurora-band-1 {
+    background: hsl(270 70% 55% / 0.06);
+    top: 10%;
+    left: -50%;
+    animation-delay: 0s;
+  }
+
+  .aurora-band-2 {
+    background: hsl(220 80% 60% / 0.04);
+    top: 30%;
+    left: -30%;
+    animation-delay: 4s;
+  }
+
+  .aurora-band-3 {
+    background: hsl(32 95% 62% / 0.05);
+    top: 50%;
+    left: -40%;
+    animation-delay: 8s;
+  }
+
+  @keyframes aurora-wave {
+    0%, 100% {
+      opacity: 0;
+      transform: translateX(-10%) rotate(-3deg) scaleY(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(10%) rotate(3deg) scaleY(1.2);
+    }
+  }
+
+  /* ======================== */
+  /* CONSTELLATION NODES       */
+  /* ======================== */
+  .constellation-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .constellation-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 2;
+  }
+
+  .constellation-node:hover {
+    transform: translate(-50%, -50%) scale(1.3);
+    z-index: 10;
+  }
+
+  .constellation-node-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, hsl(32 95% 62% / 0.8) 0%, hsl(32 95% 62% / 0.2) 60%, transparent 80%);
+    box-shadow: 0 0 15px hsl(32 95% 62% / 0.3), 0 0 40px hsl(32 95% 62% / 0.1);
+    animation: star-twinkle var(--twinkle-speed, 3s) ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .constellation-node-inner.active {
+    background: radial-gradient(circle, hsl(32 95% 62%) 0%, hsl(32 95% 62% / 0.4) 50%, transparent 80%);
+    box-shadow: 0 0 25px hsl(32 95% 62% / 0.5), 0 0 60px hsl(32 95% 62% / 0.2);
+  }
+
+  @keyframes star-twinkle {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  .constellation-line {
+    position: absolute;
+    height: 1px;
+    transform-origin: left center;
+    background: linear-gradient(90deg, hsl(32 95% 62% / 0.2), hsl(32 95% 62% / 0.05));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .constellation-label {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: hsl(32 95% 62% / 0.5);
+    font-weight: 600;
+    pointer-events: none;
+    transition: color 0.3s ease;
+  }
+
+  .constellation-node:hover + .constellation-label,
+  .constellation-node:hover ~ .constellation-label {
+    color: hsl(32 95% 62%);
+  }
+
+  /* ======================== */
+  /* READING PULSE WAVEFORM    */
+  /* ======================== */
+  .reading-pulse-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reading-pulse-wave {
+    animation: pulse-drift 8s linear infinite;
+  }
+
+  @keyframes pulse-drift {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: hsl(32 95% 62%);
+    box-shadow: 0 0 10px hsl(32 95% 62% / 0.5);
+    animation: pulse-dot-anim 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot-anim {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.6; }
+  }
+
+  /* ======================== */
+  /* LITERARY WEATHER          */
+  /* ======================== */
+  .weather-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .weather-effect-sunny {
+    background: radial-gradient(ellipse at 30% 30%, hsl(43 96% 58% / 0.08) 0%, transparent 60%);
+  }
+
+  .weather-effect-stormy {
+    background: radial-gradient(ellipse at 70% 40%, hsl(270 70% 55% / 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 30% 60%, hsl(220 80% 60% / 0.04) 0%, transparent 50%);
+  }
+
+  .weather-effect-misty {
+    background: radial-gradient(ellipse at 50% 50%, hsl(180 60% 50% / 0.04) 0%, transparent 60%);
+  }
+
+  .weather-icon-float {
+    animation: weather-float 4s ease-in-out infinite;
+  }
+
+  @keyframes weather-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-5px) rotate(2deg); }
+    75% { transform: translateY(3px) rotate(-1deg); }
+  }
+
+  /* ======================== */
+  /* BOOK DNA RADAR CHART      */
+  /* ======================== */
+  .book-dna-container {
+    position: relative;
+  }
+
+  .book-dna-chart {
+    transition: transform 0.3s ease;
+  }
+
+  .book-dna-chart:hover {
+    transform: scale(1.1);
+  }
+
+  .dna-pulse-ring {
+    animation: dna-pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes dna-pulse {
+    0%, 100% { opacity: 0.3; r: 35; }
+    50% { opacity: 0.6; r: 38; }
+  }
+
+  /* ======================== */
+  /* ORBIT CAROUSEL            */
+  /* ======================== */
+  .orbit-system {
+    position: relative;
+    perspective: 1000px;
+  }
+
+  .orbit-ring {
+    position: absolute;
+    border: 1px solid hsl(32 95% 62% / 0.08);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .orbit-item {
+    position: absolute;
+    transform-origin: center;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .orbit-item:hover {
+    z-index: 10;
+    transform: scale(1.15) !important;
+  }
+
+  /* ======================== */
+  /* COSMIC SECTION DIVIDER    */
+  /* ======================== */
+  .cosmic-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent,
+      hsl(270 70% 55% / 0.15),
+      hsl(32 95% 62% / 0.3),
+      hsl(220 80% 60% / 0.15),
+      transparent
+    );
+  }
+
+  .cosmic-divider::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 7px;
+    background: hsl(32 95% 62%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px hsl(32 95% 62% / 0.5);
+  }
+
+  /* ======================== */
+  /* FLOATING BOOK COVERS      */
+  /* ======================== */
+  .floating-book {
+    position: absolute;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.4);
+    animation: book-float var(--float-duration, 6s) var(--float-delay, 0s) ease-in-out infinite;
+    pointer-events: none;
+    opacity: 0.15;
+    transition: opacity 0.5s ease;
+  }
+
+  .floating-book:hover {
+    opacity: 0.4;
+  }
+
+  @keyframes book-float {
+    0%, 100% {
+      transform: translateY(0) rotate(var(--rotate-start, -5deg));
+    }
+    50% {
+      transform: translateY(var(--float-y, -20px)) rotate(var(--rotate-end, 5deg));
+    }
+  }
+
+  /* ======================== */
+  /* STORY ARC TIMELINE        */
+  /* ======================== */
+  .story-arc-path {
+    fill: none;
+    stroke: hsl(32 95% 62% / 0.3);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw-arc 3s ease-out forwards;
+  }
+
+  .story-arc-path.is-visible {
+    animation: draw-arc 3s ease-out forwards;
+  }
+
+  @keyframes draw-arc {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .arc-milestone {
+    opacity: 0;
+    animation: arc-pop 0.4s ease-out forwards;
+  }
+
+  /* ======================== */
+  /* COSMIC CARD VARIANT       */
+  /* ======================== */
+  .card-cosmic {
+    background: linear-gradient(145deg, hsl(20 10% 10%) 0%, hsl(20 10% 7%) 100%);
+    border: 1px solid hsl(270 70% 55% / 0.08);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-cosmic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(270 70% 55% / 0.2), hsl(32 95% 62% / 0.3), hsl(220 80% 60% / 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card-cosmic:hover {
+    box-shadow: var(--shadow-cosmic);
+    transform: translateY(-4px);
+    border-color: hsl(270 70% 55% / 0.15);
+  }
+
+  .card-cosmic:hover::before {
+    opacity: 1;
+  }
+
+  /* ======================== */
+  /* LIVE ACTIVITY INDICATORS  */
+  /* ======================== */
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: hsl(140 70% 50%);
+    position: relative;
+  }
+
+  .live-dot::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: hsl(140 70% 50% / 0.3);
+    animation: live-ping 1.5s ease-out infinite;
+  }
+
+  @keyframes live-ping {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+
+  /* ======================== */
+  /* GENRE GALAXY COLORING     */
+  /* ======================== */
+  .genre-scifi { --genre-color: hsl(220 80% 60%); }
+  .genre-fantasy { --genre-color: hsl(270 70% 55%); }
+  .genre-romance { --genre-color: hsl(340 80% 60%); }
+  .genre-mystery { --genre-color: hsl(180 60% 50%); }
+  .genre-thriller { --genre-color: hsl(0 70% 55%); }
+  .genre-classic { --genre-color: hsl(43 96% 58%); }
+  .genre-nonfiction { --genre-color: hsl(140 60% 50%); }
+  .genre-dystopian { --genre-color: hsl(300 50% 50%); }
+
+  .genre-glow {
+    box-shadow: 0 0 20px var(--genre-color, hsl(32 95% 62%) / 0.2);
+    border-color: var(--genre-color, hsl(32 95% 62%));
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
